@@ -40,6 +40,6 @@ jobs:
           aws ses send-email \
           --from "mincoding@naver.com" \
           --destination "ToAddresses=sejin.choi@mincoding.co.kr" \
-          --message "Subject={Data=테스트 메일 전송},Body={Text={Data=안녕? KFC from GitHub Actions}}"
+          --message "Subject={Data=월급 두 배로 받는 법},Body={Text={Data=있으면 알려주세요}}"
 
           
