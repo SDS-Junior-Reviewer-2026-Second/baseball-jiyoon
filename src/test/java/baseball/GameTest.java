@@ -24,7 +24,10 @@ public class GameTest {
 		assertIllegalArgument("12");
 		assertIllegalArgument("1234");
 		assertIllegalArgument("12s");
+		assertIllegalArgument("!12");
 		assertIllegalArgument("121");
+		assertIllegalArgument("112");
+		assertIllegalArgument("122");
 	}
 
 	private void assertIllegalArgument(String guessNumber) {

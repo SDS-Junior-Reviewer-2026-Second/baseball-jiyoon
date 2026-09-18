@@ -43,7 +43,7 @@ public class Game {
         }
 
         for (char number : guessNumber.toCharArray()) {
-            if (number < '0' || number > '9') {
+            if (number < '0' || number > '9') { // Test branch coverage 확인
                 throw new IllegalArgumentException();
             }
         }
@@ -54,8 +54,8 @@ public class Game {
     }
 
     private boolean isDuplicatedNumber(String guessNumber) {
-        return guessNumber.charAt(0) == guessNumber.charAt(1)
+        return guessNumber.charAt(0) == guessNumber.charAt(1) // Test branch coverage 확인
                 || guessNumber.charAt(0) == guessNumber.charAt(2)
-                || guessNumber.charAt(1) == guessNumber.charAt(2);
+                || guessNumber.charAt(1) == guessNumber.charAt(2); // Test branch coverage 확인
     }
 }
