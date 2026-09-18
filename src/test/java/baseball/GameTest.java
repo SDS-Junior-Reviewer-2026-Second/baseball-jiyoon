@@ -18,13 +18,10 @@ public class GameTest {
 	}
 
 	@Test
-	void throwExceptionWhenInputsIsNull() {
+	public void throwIllegalArgumentExceptionInvalidInput() {
 		assertIllegalArgument(null);
-	}
-
-	@Test
-	void throwExceptionWhenInputLengthIsUnmatched() {
 		assertIllegalArgument("12");
+		assertIllegalArgument("1234");
 	}
 
 	private void assertIllegalArgument(String guessNumber) {
