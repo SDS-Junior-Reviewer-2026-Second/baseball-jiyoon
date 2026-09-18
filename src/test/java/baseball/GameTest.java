@@ -19,18 +19,23 @@ public class GameTest {
 
 	@Test
 	void throwExceptionWhenInputsIsNull() {
-		assertThrows(IllegalArgumentException.class, () -> {
-			game.guess(null);
-		});
+		assertIllegalArgument(null);
 	}
-	
+
 	@Test
 	void throwExceptionWhenInputLengthIsUnmatched() {
-		assertThrows(IllegalArgumentException.class, () -> {
-			game.guess("12");
-		});
+		assertIllegalArgument("12");
 	}
-	
+
+	private void assertIllegalArgument(String guessNumber) {
+		try {
+			game.guess(guessNumber);
+			fail();
+		} catch (IllegalArgumentException e) {
+
+		}
+	}
+
 	@Test
 	public void 입력값에_숫자_외의_뮸자가_입력될_경우() {
 
