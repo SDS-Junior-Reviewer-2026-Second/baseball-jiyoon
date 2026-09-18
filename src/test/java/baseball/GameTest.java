@@ -22,6 +22,7 @@ public class GameTest {
 		assertIllegalArgument(null);
 		assertIllegalArgument("12");
 		assertIllegalArgument("1234");
+		assertIllegalArgument("12s");
 	}
 
 	private void assertIllegalArgument(String guessNumber) {
@@ -31,11 +32,6 @@ public class GameTest {
 		} catch (IllegalArgumentException e) {
 
 		}
-	}
-
-	@Test
-	public void 입력값에_숫자_외의_뮸자가_입력될_경우() {
-
 	}
 	
 	@Test
