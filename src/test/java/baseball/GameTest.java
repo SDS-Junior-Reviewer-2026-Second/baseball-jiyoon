@@ -3,6 +3,7 @@ package baseball;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.*;
 
 public class GameTest {
 	private Game game;
@@ -29,15 +30,21 @@ public class GameTest {
 	private void assertIllegalArgument(String guessNumber) {
 		try {
 			game.guess(guessNumber);
-			fail();
+			org.junit.jupiter.api.Assertions.fail();
 		} catch (IllegalArgumentException e) {
 
 		}
 	}
 
 	@Test
-	public void 숫자_세개가_전부_일치_할_경우_3_strike() {
+	public void returnSolvedResultIfMatchedNumber() {
+		game.question = "123";
+		GuessResult result = game.guess("123");
 
+		assertThat(result).isNotNull();
+		assertThat(result.solved).isEqualTo(true);
+		assertThat(result.strikes).isEqualTo(3);
+		assertThat(result.balls).isEqualTo(0);
 	}
 	
 	@Test
