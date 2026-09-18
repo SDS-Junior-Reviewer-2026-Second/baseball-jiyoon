@@ -23,6 +23,7 @@ public class GameTest {
 		assertIllegalArgument("12");
 		assertIllegalArgument("1234");
 		assertIllegalArgument("12s");
+		assertIllegalArgument("121");
 	}
 
 	private void assertIllegalArgument(String guessNumber) {
@@ -33,12 +34,7 @@ public class GameTest {
 
 		}
 	}
-	
-	@Test
-	public void 입력값에_중복된_숫자가_입력될_경우() {
 
-	}
-	
 	@Test
 	public void 숫자_세개가_전부_일치_할_경우_3_strike() {
 
